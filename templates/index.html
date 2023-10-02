@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>Welcome to Drug Classification</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<style>
+    body{
+        background-image: url("https://th.bing.com/th/id/OIP.8ivaBbi4NZi3fH6ynY5CCgAAAA?w=236&h=180&c=7&r=0&o=5&pid=1.7");
+        background-repeat: no-repeat;
+        background-size:100%;
+        color:black;
+    }
+    h2{
+        text-align: left;
+        padding: 1.5rem;
+        padding-bottom: 0;
+    }
+    form b{
+        color:white;
+        font-size: 1.5rem;
+    }
+</style>
+</head>
+
+<body>
+<h1><center><b><i>WELCOME TO DRUG CLASSIFICATION</i></b></center></h1>
+
+ <div class="login">
+     <h2>The main purpose of the Drug Classification system is to predict the suitable drug type of patients based on their
+characteristics.Drug names are confidential.So, it is replaced as DrugX, DrugY, DrugA, DrugB and DrugC.
+These drugs are used as a medication for the patients based on their age, sex(Male,Female), BP level(Low,Normal,High), cholesterol level(Normal,High) and sodium to
+potassium ratio on blood.</h2>
+
+     <!-- Main Input For Receiving Query to our ML-->
+    <form align="center" action="{{ url_for('predict')}}"method="post">
+        <b>AGE</b><br>
+    	<input type="text" name="Age" placeholder="Age" required="required" /><br><br>
+        <b>SEX</b><br>
+        <input type="text" name="Sex" placeholder="Sex" required="required" /><br><br>
+        <b>BP</b><br>
+		<input type="text" name="BP" placeholder="BP" required="required" /><br><br>
+        <b>CHOLESTEROL</b><br>
+		<input type="text" name="Cholesterol" placeholder="Cholesterol" required="required" /><br><br>
+        <b>Na_TO_K</b><br>
+        <input type="text" name="Na_to_K" placeholder="Na_to_K" required="required" /><br><br>
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+   <br>
+   <br>
+ </div>
+</body>
+</html>
+
+
+
+
